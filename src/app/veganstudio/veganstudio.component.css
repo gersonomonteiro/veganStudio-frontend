@@ -1,0 +1,7 @@
+/*@import '~bootstrap/dist/css/bootstrap.min.css';*/
+.invalid-feedback-error {
+    width: 100%;
+    margin-top: -15px;
+    font-size: 80%;
+    color: #dc3545;
+}

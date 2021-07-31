@@ -1,0 +1,175 @@
+<section class="wrapper inner-page">
+  <section class="slogan">
+    <p>Celebrating Plant-based Goodness</p>
+  </section>
+  <section class="logo">
+    <!-- logo-->
+    <section class="container">
+      <figure><img src="assets/images/logo.png" alt=""></figure>
+    </section>
+  </section><!-- ./logo-->
+
+  <section class="inner-banner">
+    <!--Banner-->
+    <section class="container">
+      <p>Submit your favorite Vegan Recipes<br> and if you are lucky,<br> We will publish it on our website</p>
+    </section>
+  </section><!-- ./Banner-->
+
+  <section class="counting">
+    <!--Counting-->
+    <section class="counting-in">
+      <!--Counting-->
+      <section class="container in text-center">
+        <h2>Contest Ends in</h2>
+        <aside class="day-zone in" id="main">
+          <div id="counter" class="cf clearfix">
+            <div id="defaultCountdown" class="contest-end"></div>
+          </div>
+        </aside>
+      </section>
+    </section>
+  </section><!-- ./Counting-->
+
+  <section class="recipe-form section-wrap">
+    <!--Form-->
+    <form id="contest-form" [formGroup]="Form" novalidate>
+      <section class="container in">
+        <div id="alert_placeholder" class='text-center'></div>
+        <section class="row">
+          <!--Form-row1-->
+          <aside class="col-md-4">
+            <section class="form-group">
+              <input type="text" formControlName="name" placeholder="NAME" id="name" class="form-control">
+
+            </section>
+            <div *ngIf="Form.controls['name'].invalid && (Form.controls['name'].dirty || Form.controls['name'].touched)"
+              class="invalid-feedback-error">
+              <div *ngIf="Form.controls['name'].errors.required">
+                Name is required.
+              </div>
+            </div>
+          </aside>
+          <aside class="col-md-4">
+            <section class="form-group">
+              <input type="email" formControlName="email" placeholder="EMAIL" id="email" class="form-control">
+            </section>
+            <div
+              *ngIf="Form.controls['email'].invalid && (Form.controls['email'].dirty || Form.controls['email'].touched)"
+              class="invalid-feedback-error">
+              <div *ngIf="Form.controls['email'].errors.required">
+                Email is required.
+              </div>
+            </div>
+          </aside>
+          <aside class="col-md-4">
+            <section class="form-group">
+              <input type="text" formControlName="recipe_name" placeholder="RECIPE NAME" id="recipe_name"
+                class="form-control">
+            </section>
+            <div
+              *ngIf="Form.controls['recipe_name'].invalid && (Form.controls['recipe_name'].dirty || Form.controls['recipe_name'].touched)"
+              class="invalid-feedback-error">
+              <div *ngIf="Form.controls['recipe_name'].errors.required">
+                Recipe name is required.
+              </div>
+            </div>
+          </aside>
+        </section>
+        <!--./Form-row1-->
+        <section class="row">
+          <!--Form-row2-->
+          <aside class="col-md-4">
+            <section class="form-group">
+              <textarea type="text" formControlName="ingredients" placeholder="INGREDIENTS" required id="ingredients"
+                class="form-control"></textarea>
+            </section>
+            <div
+              *ngIf="Form.controls['ingredients'].invalid && (Form.controls['ingredients'].dirty || Form.controls['ingredients'].touched)"
+              class="invalid-feedback-error">
+              <div *ngIf="Form.controls['ingredients'].errors.required">
+                Ingredients is required.
+              </div>
+            </div>
+          </aside>
+          <aside class="col-md-4">
+            <section class="form-group">
+              <textarea type="text" formControlName="method" placeholder="METHOD" required id="method"
+                class="form-control"></textarea>
+            </section>
+            <div
+              *ngIf="Form.controls['method'].invalid && (Form.controls['method'].dirty || Form.controls['method'].touched)"
+              class="invalid-feedback-error">
+              <div *ngIf="Form.controls['method'].errors.required">
+                Method is required.
+              </div>
+            </div>
+          </aside>
+          <aside class="col-md-4">
+            <section class="form-group">
+              <input type="text" formControlName="region" placeholder="REGION" id="region" class="form-control">
+            </section>
+            <div
+              *ngIf="Form.controls['region'].invalid && (Form.controls['region'].dirty || Form.controls['region'].touched)"
+              class="invalid-feedback-error">
+              <div *ngIf="Form.controls['region'].errors.required">
+                Region is required.
+              </div>
+            </div>
+            <section class="btn-wrap">
+              <button class="btn btn-primary" type="submit" (click)="onSubmit()"> SUBMIT</button>
+            </section>
+          </aside>
+        </section>
+        <!--./Form-row2-->
+      </section>
+    </form>
+  </section><!-- ./Form-->
+
+  <section class="contest section-wrap">
+    <!--Contest-->
+    <section class="container in">
+      <h2>Vegan Studio Contest</h2>
+      <div>
+        <section class="contest-wrap clearfix" *ngFor="let contest of contests; let index = index">
+          <ul class="clearfix">
+            <li>NAME:<b>{{contest.name}}</b></li>
+            <li>REGION:<b>{{contest.region}}</b></li>
+            <li>RECIPE NAME:<b>{{contest.recipe_name}}</b></li>
+            <li><b><i class="fa fa-trash" style="color: rgb(252, 35, 35); cursor: pointer;"
+                  (click)="delete(contest.id, index)">
+                  DELETE</i></b></li>
+          </ul>
+          <aside class="col">
+            <h3>INGREDIENTS</h3>
+            <p>{{contest.ingredients}}</p>
+          </aside>
+          <aside class="col">
+            <h3>METHOD</h3>
+            <p>{{contest.method}}</p>
+          </aside>
+        </section>
+      </div>
+    </section>
+  </section><!-- ./Contest-->
+
+  <section class="recipe googey">
+    <!--Recipe-->
+    <section class="container">
+      <section class="recipe-box">
+        <h3>GOOEY CHOCOLATE ORANGE BROWNIES</h3>
+        <p>Get the recipe for our gooey chocolate orange brownies with bursts of orange flavour, which cut through the
+          richness of the chocolate nicely</p>
+        <section class="btn-wrap">
+          <a class="btn btn-primary">View More</a>
+        </section>
+      </section>
+    </section>
+  </section><!-- ./Recipe-->
+  <footer>
+    <!-- Footer-->
+    <section class="container">
+      <p>Copyright &copy 2020 The Vegan Studio &reg;</p>
+    </section>
+  </footer><!-- ./Footer-->
+</section>
