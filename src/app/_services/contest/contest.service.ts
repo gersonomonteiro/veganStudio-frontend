@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 //const CONTEST_API_URL = 'http://localhost:8080/veganstudio';
-const CONTEST_API_URL = 'http://vegan-studio-frontend:888/veganstudio';
+const CONTEST_API_URL = 'http://localhost:888/veganstudio';
 @Injectable({
   providedIn: 'root',
 })
